@@ -25,11 +25,6 @@
 ------------------------------------------------------------
 ```
 
-# Protocol information
-```
-websocket = A websocket connects to a server via a single TCP/IP connection and performs both full-duplex and bifunctional communication
-```
-
 # LIST OF WELL-KNOWN PORTS
 ```
 Port Description
