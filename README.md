@@ -371,22 +371,35 @@ Port	TCP	UDP	Description	Status
 ## Ports scan using the below script. Change Host IP first.
 > nano port_scan.sh
 ```
-hosts=(
+# Set Color variable
+ColorVerde='\033[1;32m'
+FinColor='\033[0m'
+Red='\033[0;31m'
+On_Blue='\033[44m'
+NC='\033[0m' # No Color
+
+# Define hosts/servers
+SERVERS=(
 #"86.98.58.146" #Public IP
-#"192.168.192.234" #Local Server
-"192.168.192.201" #Local PC
+"192.168.192.201" #Local Server
+"192.168.192.207" #Local PC
+#"127.0.0.1" #Loop back ip
 )
 
-for host in "${hosts[@]}"
+# Define ports
+PORTS=(21 22 80 5501 5502 5503 5504 7701 7702 7703 7704 5551 5552 5553 7771 7772 7773)
+
+for host in "${SERVERS[@]}";
 do
-        echo "==========================="
-        echo "Scanning $host"
-        echo "==========================="
-            for port in {1..9999} #Dynamic port Scan
-			#for port in {21,22,23,25,53,67,68,69,80,161,443,546,547,3306,3389,1433,5432} #Custom port scan
-            do
-            echo "" > /dev/tcp/$host/$port && echo "Port $port succeeded"
-    done 2>/dev/null
+    echo "==========================="
+    echo "Scanning $host"
+    echo "==========================="
+    for PORT in  "${PORTS[@]}"
+    #for PORT in {1..9999} #Dynamic port Scan
+    do
+            (echo > /dev/tcp/$host/${PORT}) > /dev/null 2>&1 && echo -e Port Scan "${host}:${PORT}"  "${ColorVerde}succeeded!!${FinColor}" "${NC}"  || echo -e Port Scan "${host}:${PORT}"  "${On_Blue}Failed${Red}" "${NC}"
+            
+    done
 done
 ```
 > bash port_scan.sh
