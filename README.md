@@ -1,3 +1,5 @@
+# Port Scan
+```
 ###################################
 # Author: Ibrar Ansari
 # Date: 18-07-2024
@@ -6,9 +8,10 @@
 # Search TAG: port scanner , scan port , scan ports , ports scan , port scan , ports scanner , ip port scanner , ip ports scanner 
 # This is Port scanner app
 ###################################
+```
 
-#########################################################################################################
 # What is the difference between unicast, anycast, broadcast and multicast traffic?
+```
 ------------------------------------------------------------
 | TYPE      | ASSOCIATIONS     | SCOPE           | EXAMPLE |
 ------------------------------------------------------------
@@ -20,11 +23,15 @@
 ------------------------------------------------------------
 | Anycast   | Many to Few      | Whole network   | 6to4/dns|
 ------------------------------------------------------------
+```
 
 # Protocol information
+```
 websocket = A websocket connects to a server via a single TCP/IP connection and performs both full-duplex and bifunctional communication
+```
 
 # LIST OF WELL-KNOWN PORTS
+```
 Port Description
 1	TCP Port Service Multiplexer (TCPMUX)
 5	Remote Job Entry (RJE)
@@ -77,8 +84,9 @@ Port Description
 1433 MSSQL
 1080 Socks
 5432 Postgres
-
+```
 # LIST OF WELL-KNOWN PORTS IN DETAILS
+```
 Well-known ports
 The port numbers in the range from 0 to 1023 are the well-known ports or system ports. They are used by system processes that provide widely used types of network services. On Unix-like operating systems, a process must execute with superuser privileges to be able to bind a network socket to an IP address using one of the well-known ports.
 
@@ -358,3 +366,4 @@ Port	TCP	UDP	Description	Status
 1002	TCP		Opsware agent (aka cogbot)	Unofficial
 1010	TCP		ThinLinc Web Administration	Unofficial
 1023	TCP	UDP	Reserved	Official
+```
