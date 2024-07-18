@@ -367,3 +367,26 @@ Port	TCP	UDP	Description	Status
 1010	TCP		ThinLinc Web Administration	Unofficial
 1023	TCP	UDP	Reserved	Official
 ```
+
+## Ports scan using the below script. Change Host IP first.
+> nano port_scan.sh
+```
+hosts=(
+#"86.98.58.146" #Public IP
+#"192.168.192.234" #Local Server
+"192.168.192.201" #Local PC
+)
+
+for host in "${hosts[@]}"
+do
+        echo "==========================="
+        echo "Scanning $host"
+        echo "==========================="
+            for port in {1..9999} #Dynamic port Scan
+			#for port in {21,22,23,25,53,67,68,69,80,161,443,546,547,3306,3389,1433,5432} #Custom port scan
+            do
+            echo "" > /dev/tcp/$host/$port && echo "Port $port succeeded"
+    done 2>/dev/null
+done
+```
+> bash port_scan.sh
